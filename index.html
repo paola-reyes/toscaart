@@ -79,23 +79,23 @@
     text-decoration-color: white !important;
   }
 
- svg {
-  stroke: white !important; 
- }
+  @media (min-width: 1024px) {
+    svg {
+      stroke: white;
+    }
+  }
+
+  .folder-toggle-label {
+    color: black;
+  }
 
   #mobile-navigation a {
     color: black !important;
   }
 
-
-/* Black on mobile */
-@media (max-width: 768px) {
-  .icon-hamburger {
-    color: black;
-    fill: black;
+  .menu-open .icon-hamburger {
+    color: black !important; 
   }
-}
-
 
 </style>
 
@@ -138,7 +138,7 @@
             </div>
 
             <!-- Hamburger navigation for smaller window sizes -->
-            <span class="ctrl-button menu"><a class="icon-hamburger"></a></span>
+            <nav class="ctrl-button menu"><a class="icon-hamburger"></a></nav>
 
             <!-- PC site navigation -->
             <div id="topNav">
@@ -446,6 +446,15 @@
         delay: 6000,
         disableOnInteraction: false,
       },
+    });
+  </script>
+
+  <script>
+    const hamburger = document.querySelector('.icon-hamburger');
+    const body = document.body;
+
+    hamburger.addEventListener('click', () => {
+      body.classList.toggle('menu-open');
     });
   </script>
 <script type="text/javascript" defer src="https://static1.squarespace.com/static/ta/51e6b9c9e4b050adffbe392c/1243/scripts/combo/?site.js"></script>
